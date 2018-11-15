@@ -1,0 +1,28 @@
+admin
+admin
+Thu Nov 08 02:52:58 ALMT 2018 Admin logged into a system
+Thu Nov 08 02:53:22 ALMT 2018 Admin added new instructor "Temirbek Balabek Kbtu temirbek.balabek@mail.ru"
+Thu Nov 08 02:53:22 ALMT 2018 Admin logged into a system
+Thu Nov 08 23:45:56 ALMT 2018 Admin logged into a system
+Thu Nov 08 23:46:12 ALMT 2018 Admin added new textbook "The title is asdf"
+Thu Nov 08 23:46:13 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:13:04 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:13:28 ALMT 2018 Admin added new textbook "The title is ThomasCalculus"
+Fri Nov 09 00:13:29 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:15:05 ALMT 2018 Admin added new course "Isakhov's"
+Fri Nov 09 00:15:05 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:15:25 ALMT 2018 Admin added new instructor "Temirbek Balabek KBTU temirbek.balabek@mail.ru"
+Fri Nov 09 00:15:25 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:17:19 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:17:25 ALMT 2018 Admin added new textbook "The title is asdf"
+Fri Nov 09 00:17:25 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:18:12 ALMT 2018 Admin added new course "Isakhov's"
+Fri Nov 09 00:18:12 ALMT 2018 Admin logged into a system
+Fri Nov 09 00:18:23 ALMT 2018 Admin added new instructor "asdf adsf adsf asdf"
+Fri Nov 09 00:18:23 ALMT 2018 Admin logged into a system
+Fri Nov 09 11:13:46 ALMT 2018 Admin logged into a system
+Fri Nov 09 11:13:59 ALMT 2018 Admin added new textbook "The title is fghj"
+Fri Nov 09 11:13:59 ALMT 2018 Admin logged into a system
+Fri Nov 09 11:14:30 ALMT 2018 Admin logged into a system
+Fri Nov 09 11:15:20 ALMT 2018 Admin added new course "Isakhov's"
+Fri Nov 09 11:15:20 ALMT 2018 Admin logged into a system
