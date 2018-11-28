@@ -3,7 +3,7 @@ import java.io.DataInput;
 import java.io.Serializable;
 import java.util.*;
 
-public class Course implements Serializable {
+public class Course {
     private String name, id;
     private Teacher teacher;
     private Faculty faculty;
@@ -28,7 +28,9 @@ public class Course implements Serializable {
         this.yearOfStudy = yearOfStudy;
         courseFiles = new Vector<CourseFile>();
     }
-
+    public void addCourseFile(String name,String body){
+        courseFiles.add(new CourseFile(name,body));
+    }
     public void attendance(Date date, Student student, boolean attendedOrNot) {
         HashMap<Student, Boolean> a = attendance.get(student);
         a.put(student, attendedOrNot);

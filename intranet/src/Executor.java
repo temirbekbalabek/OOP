@@ -7,12 +7,16 @@ public class Executor extends Employee {
     public static Queue<Pair<Teacher, String>> accepted;
     public static Queue<Pair<Teacher, String>> done;
 
-
+    Executor(String login, String password, String name, String surname,
+             int salary,  String id){
+        super(login, password, name, surname, salary, id);
+    }
     public static String viewNextOrder() {
         Pair<Teacher, String> s = order.peek();
         String message = s.getKey() + " " + s.getValue();
         return message;
     }
+
 
     public static void rejectOrder() {
         if (order.size() != 0)

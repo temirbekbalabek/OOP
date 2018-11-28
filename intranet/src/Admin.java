@@ -7,9 +7,9 @@ import java.io.IOException;
 public class Admin extends Employee {
     Admin(String login, String password, String name, String surname,
           int salary, Position position, String id){
-        super(login, password, name, surname, salary, position, id);
+        super(login, password, name, surname, salary, id);
     }
-    public void addUser(User user, String type){
+    public static void addUser(User user, String type){
         if(type.equals("teacher")){
             Teacher teacher=(Teacher) user;
             Storage.teachers.add(teacher);
@@ -22,8 +22,12 @@ public class Admin extends Employee {
             Manager manager=(Manager) user;
             Storage.managers.add(manager);
         }
+        if(type.equals("executor")){
+            Executor executor=(Executor) user;
+            Storage.executors.add(executor);
+        }
     }
-    public void removeUser(User user, String type){
+    public static void removeUser(User user, String type){
         if(type.equals("teacher")){
             Teacher teacher=(Teacher) user;
             Storage.teachers.remove(teacher);
@@ -36,8 +40,12 @@ public class Admin extends Employee {
             Manager manager=(Manager) user;
             Storage.managers.remove(manager);
         }
+        if(type.equals("executor")){
+            Executor executor=(Executor) user;
+            Storage.executors.remove(executor);
+        }
     }
-    public void updatePassword(User user, String type, String password){
+    public static void updatePassword(User user, String type, String password){
         if(type.equals("teacher")){
             Teacher teacher=(Teacher) user;
             if(Storage.teachers.contains(teacher)){
@@ -60,8 +68,15 @@ public class Admin extends Employee {
                 Storage.managers.elementAt(index).setPassword(password);
             }
         }
+        if(type.equals("executor")){
+            Executor executor=(Executor) user;
+            if(Storage.executors.contains(executor)){
+                int index = Storage.executors.indexOf(executor);
+                Storage.executors.elementAt(index).setPassword(password);
+            }
+        }
     }
-    public String seeUserActions() throws FileNotFoundException {
+    public static String seeUserActions() throws FileNotFoundException {
         String s="";
         BufferedReader br=null;
         String inputline=null;

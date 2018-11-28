@@ -4,8 +4,8 @@ import java.util.Vector;
 
 public class Manager extends Employee {
     Manager(String login, String password, String name, String surname,
-            int salary, Position position, String id) {
-        super(login, password, name, surname, salary, position, id);
+            int salary, String id) {
+        super(login, password, name, surname, salary, id);
     }
 
     public void addCourse(Course course, Teacher teacher) {

@@ -2,7 +2,7 @@ import java.util.Vector;
 
 import java.util.HashMap;
 
-public class Student extends User implements Comparable {
+public class Student extends User implements Comparable, ViewAttendanceAndTranscript {
     private boolean isPassed;
     private int yearOfStudy;
     private HashMap<Course, Double> marks;
@@ -22,6 +22,13 @@ public class Student extends User implements Comparable {
 
     }
 
+    public Student(String surname, String name, String login, String id, String password, int yearOfStudy, Faculty faculty) {
+        super(login, password, name, surname, id);
+        super.setId(id);
+        this.yearOfStudy = yearOfStudy;
+        this.faculty = faculty;
+    }
+
     public void setMark(Course course, Double mark) {
         if (hasSubject(course)) {
             marks.put(course, Math.min(100, marks.get(course)));
@@ -38,15 +45,13 @@ public class Student extends User implements Comparable {
         }
         return false;
     }
-    public void regestrationForCourse(Course course){
+
+    public void registrationForCourse(Course course) {
         current.add(course);
-
-
     }
-    public String viewMarkForSpecificCourse(){
-        String s="";
 
-
+    public String viewMarkForSpecificCourse() {
+        String s = "";
         return s;
     }
 
@@ -58,11 +63,12 @@ public class Student extends User implements Comparable {
 
     }
 
-    public Student(String surname, String name, String login, String id, String password, int yearOfStudy, Faculty faculty) {
-        super(login, password, name, surname, id);
-        super.setId(id);
-        this.yearOfStudy = yearOfStudy;
-        this.faculty = faculty;
+    public Course getCourse(String name){
+        Course course2=new Course();
+        for (int i=0;i<current.size();++i)
+            if (current.elementAt(i).getName().equals(name))
+                course2=current.elementAt(i);
+        return course2;
     }
 
     public void setYearOfStudy(int yearOfStudy) {
@@ -82,11 +88,12 @@ public class Student extends User implements Comparable {
         for (int i = 0; i < passed.size(); ++i)
             System.out.println(passed.elementAt(i));
     }
-    public String viewAllCourse(){
-        String s="";
-        for (int i=0;i<Storage.teachers.size();++i){
 
-            s+=Storage.teachers.elementAt(i).viewCourse()+"\n";
+    public String viewAllCourse() {
+        String s = "";
+        for (int i = 0; i < Storage.teachers.size(); ++i) {
+
+            s += Storage.teachers.elementAt(i).viewCourse() + "\n";
         }
         return s;
     }
@@ -146,6 +153,23 @@ public class Student extends User implements Comparable {
     }
 
     @Override
+    public String getTranscript() {
+
+        String s = "";
+        for (int i = 0; i < current.size(); ++i) {
+            s = s + "\n" + current.elementAt(i).getMarkForStudent(this) + "\n" + getMark(current.elementAt(i));
+        }
+        return s;
+    }
+
+    @Override
+    public String getAttendance() {
+        String s = "";
+
+        return s;
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this.getClass() != obj.getClass())
             return false;
@@ -156,17 +180,18 @@ public class Student extends User implements Comparable {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "id: " + super.getId() +"\n"+
-                "year of study: " + yearOfStudy+"\n" +
+                "id: " + super.getId() + "\n" +
+                "year of study: " + yearOfStudy + "\n" +
                 "faculty: " + faculty;
     }
+
     @Override
-    public int compareTo(Object o){
-        Student student=(Student)o;
-        if(super.getName().compareTo(student.getName())>=1 && GPA>student.GPA){
+    public int compareTo(Object o) {
+        Student student = (Student) o;
+        if (super.getName().compareTo(student.getName()) >= 1 && GPA > student.GPA) {
             return 1;
         }
-        if(super.getName().compareTo(student.getName())<=-1 && GPA<student.GPA){
+        if (super.getName().compareTo(student.getName()) <= -1 && GPA < student.GPA) {
             return -1;
         }
         return 0;

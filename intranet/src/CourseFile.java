@@ -1,13 +1,16 @@
 import java.io.Serializable;
 
-public class CourseFile implements Serializable {
-    String name, body;
+public class CourseFile {
+    private String name, body;
 
     public CourseFile() {
         name = "no name";
         body = "";
     }
-
+    public CourseFile(String name, String body){
+        this.name=name;
+        this.body=body;
+    }
     public void setBody(String body) {
         this.body = body;
     }
